@@ -10,14 +10,29 @@ import CoffeeItem from "./CoffeeItem";
 // Data
 import cafes from "../../data/cafes";
 
+// const passedItemID = props.navigation.getParam("itemID", 1);
+// const anotherParam = props.navigation.getParam(
+//   "anotherParam",
+//   "some default text"
+// );
+
 const CoffeeList = () => {
   let shops;
+
   if (cafes) {
     shops = cafes.map(cafe => <CoffeeItem cafe={cafe} key={cafe.id} />);
   }
   return (
     <Content>
-      <List>{shops}</List>
+      <List
+        onPress={() =>
+          props.navigation.navigate("DetailScreen", {
+            itemID: shops.id
+          })
+        }
+      >
+        {shops}
+      </List>
     </Content>
   );
 };
