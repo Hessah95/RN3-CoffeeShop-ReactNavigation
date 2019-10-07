@@ -1,37 +1,26 @@
 import React, { Component } from "react";
 import { ImageBackground, View } from "react-native";
-
+import { withNavigation } from "react-navigation";
 // NativeBase Components
 import { ListItem, Card, CardItem, Thumbnail, Text, Left } from "native-base";
 
 // Style
 import styles from "./styles";
-import { withNavigation } from "react-navigation";
 
-const CoffeeItem = props => {
-  const { cafe } = props;
-  const { navigate } = props;
-
+const CoffeeItem = ({ navigation, cafe }) => {
   const handlePress = () => {
     navigation.navigate("DetailScreen", {
-      itemID: cafe.id
+      cafeID: cafe.id
     });
   };
+
   return (
     <ImageBackground
       source={{ uri: cafe.background }}
       style={styles.background}
     >
       <View style={styles.overlay} />
-      <ListItem
-        button
-        onPress={() =>
-          navigation.navigate("DetailScreen", {
-            itemID: shops.id
-          })
-        }
-        style={styles.listitem}
-      >
+      <ListItem button onPress={handlePress} style={styles.listitem}>
         <Card style={styles.transparent}>
           <CardItem style={styles.transparent}>
             <Left>

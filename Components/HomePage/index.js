@@ -3,6 +3,7 @@ import { View } from "react-native";
 
 // NativeBase Components
 import { Container, Header } from "native-base";
+import AppContainer from "../../Navigation/index";
 
 // Style
 import styles from "./styles";
@@ -12,9 +13,6 @@ import CoffeeList from "../CoffeeList";
 import CoffeeCart from "../CoffeeCart";
 import CoffeeDetail from "../CoffeeDetail";
 import Login from "../Login";
-
-//navigations
-import AppContainer from "../../Navigation";
 
 const HomePage = () => {
   return (

@@ -16,7 +16,6 @@ import {
 } from "native-base";
 
 const Login = props => {
-  // const { navigation } = props;
   return (
     <Content>
       <Header transparent />
