@@ -6,10 +6,16 @@ import { ListItem, Card, CardItem, Thumbnail, Text, Left } from "native-base";
 
 // Style
 import styles from "./styles";
+import { withNavigation } from "react-navigation";
 
-const CoffeeItem = ({ cafe }) => {
+const CoffeeItem = props => {
+  const { cafe } = props;
+  const { navigate } = props;
+
   const handlePress = () => {
-    alert("Pressed");
+    navigation.navigate("DetailScreen", {
+      itemID: cafe.id
+    });
   };
   return (
     <ImageBackground
@@ -17,7 +23,15 @@ const CoffeeItem = ({ cafe }) => {
       style={styles.background}
     >
       <View style={styles.overlay} />
-      <ListItem button onPress={handlePress} style={styles.listitem}>
+      <ListItem
+        button
+        onPress={() =>
+          navigation.navigate("DetailScreen", {
+            itemID: shops.id
+          })
+        }
+        style={styles.listitem}
+      >
         <Card style={styles.transparent}>
           <CardItem style={styles.transparent}>
             <Left>
@@ -38,4 +52,4 @@ const CoffeeItem = ({ cafe }) => {
   );
 };
 
-export default CoffeeItem;
+export default withNavigation(CoffeeItem);

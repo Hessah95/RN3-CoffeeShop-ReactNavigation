@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   header: {
+    // backgroundColor: rgb(20, 90, 100),
     color: "white",
     fontWeight: "bold",
     fontSize: 17,

@@ -12,6 +12,8 @@ import CoffeeList from "../CoffeeList";
 import CoffeeCart from "../CoffeeCart";
 import CoffeeDetail from "../CoffeeDetail";
 import Login from "../Login";
+
+//navigations
 import AppContainer from "../../Navigation";
 
 const HomePage = () => {

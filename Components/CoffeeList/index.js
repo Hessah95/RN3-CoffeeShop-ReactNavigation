@@ -37,4 +37,10 @@ const CoffeeList = () => {
   );
 };
 
-export default observer(CoffeeList);
+export default CoffeeList;
+
+CoffeeList.navigitaionOption = () => {
+  return {
+    headerTitle: "Coffee List"
+  };
+};

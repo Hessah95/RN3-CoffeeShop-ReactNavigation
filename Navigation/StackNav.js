@@ -5,16 +5,25 @@ import Home from "../Components/HomePage";
 import List from "../Components/CoffeeList";
 import Detail from "../Components/CoffeeDetail";
 import Login from "../Components/Login";
+import Cart from "../Components/CoffeeCart";
+import { white, bold } from "ansi-colors";
 
 const StackNav = createStackNavigator(
   {
-    HomeScreen: Home,
     ListScreen: List,
     DetailScreen: Detail,
-    LoginScreen: Login
+    LoginScreen: Login,
+    CartScreen: Cart
   },
   {
-    initialRouteName: "LoginScreen"
+    initialRouteName: "LoginScreen",
+    defaultNavigationOptions: {
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "red",
+        fontWeight: "bold"
+      }
+    }
   }
 );
 
